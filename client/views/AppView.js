@@ -11,16 +11,12 @@ var AppView = Backbone.View.extend({
       this.playerView.setSong(model.get('currentSong'));
     }, this);
 
-    this.model.get('songQueue').on('add', function(model) {
+    this.model.get('songQueue').on('add ended dequeue', function(model) {
       this.songQueueView.render();
     }, this);
 
-    this.model.get('songQueue').on('ended', function(model) {
-      this.songQueueView.render();
-    }, this);
-
-    this.model.get('songQueue').on('dequeue', function(model) {
-      this.songQueueView.render();
+    this.model.get('library').on('add', function(model) {
+      this.libraryView.render();
     }, this);
 
     // this.model.get('songQueue').on('enqueue', function(model) {

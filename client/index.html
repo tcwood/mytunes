@@ -7,7 +7,9 @@
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
 
-    <script src="data/data.js"></script>
+    <!-- <script src="data/data.js"></script> -->
+    <script src="data/internetData.js"></script>
+    <script src="env/config.js"></script>
 
     <script src="models/SongModel.js"></script>
     <script src="collections/Songs.js"></script>
@@ -23,16 +25,20 @@
 
     <script>
       $(function() {
-        // set up model objects
-        var library = new Songs(songData);
-        // var queue = new SongQueue([]);
-        var app = new AppModel({ library: library });
+        ajaxCall();
+        // var library = new Songs(songData);
+        setTimeout( () => {
 
-        // build a view for the top level of the whole app
-        var appView = new AppView({model: app});
+          var library = new Songs(internetData);
 
-        // put the view onto the screen
-        $('body').append(appView.render());
+          var app = new AppModel({ library: library });
+
+          var appView = new AppView({model: app});
+
+          $('body').append(appView.render());
+
+        }, 1000);
+
       });
     </script>
   </body>
