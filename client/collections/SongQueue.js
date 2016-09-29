@@ -5,12 +5,14 @@ var SongQueue = Backbone.Collection.extend({
 
   initialize: function() {
     this.on('add', function(song) {
+      console.log(this.length);
       if (this.length === 1) {
         this.playFirst();
       }  
     }, this);
 
     this.on('ended', function(song) {
+      console.log('songQueue Ended');
       this.shift();
       if (this.length > 0) {
         this.playFirst();
@@ -28,10 +30,6 @@ var SongQueue = Backbone.Collection.extend({
 
 });
 
-// when a song is added
-  //check if it is only song in queue
-    //if it is, play song (playFirst?)
-    //else, nothing
 
 
 

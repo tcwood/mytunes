@@ -31,22 +31,26 @@ describe('PlayerView', function() {
     expect(appView.playerView.model).to.equal(library.at(0));
   });
 
-  xit('dequeues a song when finished playing & plays the next song', function() {
+  it('dequeues a song when finished playing & plays the next song', function() {
     var firstSong = library.at(0);
     var secondSong = library.at(1);
     var thirdSong = library.at(2);
     var songQueue = appView.model.get('songQueue');
     // Set up a queue of three songs
     songQueue.add(firstSong);
+    // console.log('first song');
     songQueue.add(secondSong);
+
     songQueue.add(thirdSong);
     // play the first song
     songQueue.playFirst();
     expect(appView.playerView.model).to.equal(firstSong);
+
     // Simulate the end of the first song
     $(appView.playerView.el).trigger('ended');
+    console.log('ended?');
     expect(appView.playerView.model).to.equal(secondSong);
-    // Simulate the end of the second song
+        // Simulate the end of the second song
     $(appView.playerView.el).trigger('ended');
     expect(appView.playerView.model).to.equal(thirdSong);
   });
