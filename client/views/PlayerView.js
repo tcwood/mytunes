@@ -7,10 +7,10 @@ var PlayerView = Backbone.View.extend({
 
   initialize: function() {
     //Had to put this idea into events:.... below
-    var song = this.model;
-    this.$el.on('ended', function(event) {
-      this.model.ended();
-    }.bind(this));
+    // var song = this.model;
+    // this.$el.on('ended', function(event) {
+    //   song.ended();
+    // });
   },
 
   events: {
