@@ -1,0 +1,78 @@
+body {
+  background-color: #e1e2ba;
+}
+
+.mainTitle {
+  font-size: 50px;
+  display: block;
+  margin: 0 35% 0 35%;
+  color: #041110;
+}
+
+.library:hover {
+  background-color: #a38e79;
+  color: #041110;
+}
+
+.queue:hover {
+  background-color: #a38e79;
+  color: #041110;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  height: 90vh;
+}
+
+.audio {
+  display: block;
+  width: 100%;
+  border: 10px solid;
+  border-radius: 10px; 
+  margin: 15px;
+}
+
+.list-group {
+  overflow: scroll;
+  background-color: #235b56;
+  color: #e1e2ba;
+  width: 48%;
+  height: 80vh;
+  padding: 0 10px 0 10px;
+  border: 2px solid;
+  border-radius: 25px;
+  transition: all 2s;
+}
+
+.library {
+  float: left;
+}
+.queue {
+  float: right;
+}
+
+h1 {
+  margin: 0 auto 0 auto;
+}
+
+
+.list-group-item {
+  opacity: .75;
+  height: 30px;
+  padding-bottom: 5px;
+}
+
+.artist {
+  float: left;
+  font-weight: bold;
+  font-size: 16px;
+
+}
+
+.songTitle {
+  float: right;
+  font-size: 14px;
+  /*padding-bottom: 5px;*/
+}

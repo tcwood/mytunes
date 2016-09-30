@@ -18,15 +18,13 @@ var AppView = Backbone.View.extend({
     this.model.get('library').on('add', function(model) {
       this.libraryView.render();
     }, this);
-
-    // this.model.get('songQueue').on('enqueue', function(model) {
-    //   this.songQueueView.render();
-    //   // this.playerView.setSong(model.get('currentSong'));
-    // }, this);
-
   },
 
   render: function() {
+
+    this.$el.addClass('container');
+
+
     return this.$el.html([
       this.playerView.$el,
       this.libraryView.$el,
